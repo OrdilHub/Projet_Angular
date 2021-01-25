@@ -4,3 +4,7 @@
 	<h3>Nom: {{serviceEle.listeEleves[indexEleve].nom}} - Prenom: {{serviceEle.listeEleves[indexEleve].prenom}}</h3>
 	<img [src]="serviceEle.listeEleves[indexEleve].photo">
 </article>
+<article *ngIf="indexEleve <0">
+	<h3>Aucun étudiant sélectionné</h3>
+	
+</article>
