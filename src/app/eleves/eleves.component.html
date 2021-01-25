@@ -1,0 +1,7 @@
+<article *ngFor="let eleve of serviceEle.listeEleves; let i=index">
+	<h3>{{i+1}}) Nom: {{eleve.nom}} - Prenom: {{eleve.prenom}}</h3>
+	<a href routerLink="/etudiant/{{i}}">
+		<img [src]="eleve.photo">
+	</a>
+		
+</article>

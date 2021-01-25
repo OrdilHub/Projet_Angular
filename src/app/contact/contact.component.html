@@ -1,0 +1,13 @@
+<section>
+    <form #f="ngForm" (ngSubmit)="soumissionFormulaire(f)">
+        <input name="nom" [(ngModel)]="contactE.nom" placeholder="Votre nom" type="text" required>
+        <input name="mail" [(ngModel)]="contactE.mail" placeholder="Votre.adresse@mail.com" type="mail" required>
+        <input name="mdp" [(ngModel)]="contactE.mdp"  placeholder="********" type="password"required>
+        <textarea name="msg" [(ngModel)]="contactE.msg" placeholder="Tappez votre message " required></textarea>
+        <input type="submit" value="Valider" [disabled]="f.invalid">
+        <input type="reset" value="Réinitialiser">
+        
+    </form>
+
+</section>
+
