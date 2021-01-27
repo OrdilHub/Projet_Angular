@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +12,9 @@ import { Err404Component } from './err404/err404.component';
 import { ContactComponent } from './contact/contact.component';
 import { EleveComponent } from './eleve/eleve.component';
 import { FormsModule } from '@angular/forms';
+import { ConnexionComponent } from './connexion/connexion.component';
+import { EleveService } from './services/eleve.service';
+import { AuthInterceptor } from './services/auth.interceptor';
 
 
 @NgModule({
@@ -24,6 +27,7 @@ import { FormsModule } from '@angular/forms';
     Err404Component,
     ContactComponent,
     EleveComponent,
+    ConnexionComponent,
     
   ],
   imports: [
@@ -32,7 +36,7 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [EleveService, {provide:HTTP_INTERCEPTORS,useClass:AuthInterceptor, multi:true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

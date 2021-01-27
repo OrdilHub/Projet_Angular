@@ -1,0 +1,8 @@
+<section>
+    <form #f="ngForm" (ngSubmit)="soumissionFormulaire(f)">
+        <input name="id" [(ngModel)]="contactE.id" placeholder="Votre id" type="text" required>
+        <input name="mdp" [(ngModel)]="contactE.mdp"  placeholder="********" type="password"required>
+        
+    </form>
+
+</section>
