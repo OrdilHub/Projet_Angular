@@ -14,6 +14,7 @@ const routes: Routes = [
   {path:"etudiant",component:EleveComponent},
   {path:"etudiant/:index",component:EleveComponent},
   {path:"contact",component:ContactComponent},
+  {path:"edition", loadChildren:()=>import('./edition/eleve/edition.module').then (e =>e.EditionModule)},
   {path:"**",component:Err404Component}
 
 

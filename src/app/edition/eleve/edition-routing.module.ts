@@ -9,4 +9,4 @@ export const routes= []
     exports: [RouterModule]
 })
 
-export class EleveRoutingModule{}
+export class EditionRoutingModule{}
